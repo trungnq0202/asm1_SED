@@ -6,25 +6,9 @@
 
 #IncludeRegexTransform: 
 
-/home/trungngo/Desktop/asm1_SED/Node.h
-
-/home/trungngo/Desktop/asm1_SED/Queue.cpp
-Queue.h
-/home/trungngo/Desktop/asm1_SED/Queue.h
-
-/home/trungngo/Desktop/asm1_SED/Queue.h
+/home/trungngo/Desktop/asm1_SED/Node.cpp
 Node.h
 /home/trungngo/Desktop/asm1_SED/Node.h
 
-/home/trungngo/Desktop/asm1_SED/Stack.h
-Node.h
 /home/trungngo/Desktop/asm1_SED/Node.h
-
-/home/trungngo/Desktop/asm1_SED/main.cpp
-iostream
--
-Stack.h
-/home/trungngo/Desktop/asm1_SED/Stack.h
-Queue.h
-/home/trungngo/Desktop/asm1_SED/Queue.h
 
