@@ -76,6 +76,7 @@ void printResult(int result);                       //Print result to console
 bool isDividingByZero(int arg);                     //Check division by 0 error
 void parseUserInput(int* arg1, char* op, int* arg2, char arg1CharArr[], char opCharArr[], char arg2CharArr[]);
 void operateCalculation(int arg1, char op, int arg2);
+void evaluatePostfixExpression(Queue *postfix_queue);
 
 //----------Exit------------//
 void printExitMessage();
@@ -101,7 +102,7 @@ int main() {
         }
         cout << endl;
 
-
+//        evaluatePostfixExpression(&postfix_queue);
 //        if (validationResult != PASS) {
 //            printErrorMessage(validationResult);
 //            continue;
@@ -112,157 +113,6 @@ int main() {
     printExitMessage();
     return 0;
 }
-
-
-//---------------------------------- Infix to Postfix --------------------------------//
-void convertInfixToPostfix(char *infix, Queue *postfix_queue){
-    Stack operator_stack;
-    int currentIndex = 0, prevIndex = 0;
-
-    while (*(infix)) {
-        //Remember the previous pointer of infix
-        prevIndex = currentIndex;
-
-        //If the token being read is left parenthesis "("
-        if (isLeftParenthesis(*(infix))) {
-            leftParenthesisTokenHandling(infix, &operator_stack);
-            clearWhiteSpaces(infix, &currentIndex, prevIndex);
-        }
-
-            // If the token being read is right parenthesis ")"
-        else if (isRightParenthesis(*(infix))) {
-            rightParenthesisTokenHandling(postfix_queue, &operator_stack);
-            clearWhiteSpaces(infix, &currentIndex, prevIndex);
-        }
-
-            // If the token being read is an operator
-        else if ( isOperator(*(infix)) ) {
-            if (isUnaryOperator(infix)) unaryOperatorTokenHandling(infix, &operator_stack);
-            else operatorTokenHandling(infix, postfix_queue, &operator_stack);
-            clearWhiteSpaces(infix, &currentIndex, prevIndex);
-        }
-
-            //If the token being read is an integer
-        else {
-            integerTokenHandling(infix, postfix_queue, &currentIndex);
-            clearWhiteSpaces(infix, &currentIndex, prevIndex);
-        }
-
-        //Move the 'infix' pointer to the nextIndex position
-        while (prevIndex != currentIndex) {
-            infix++; prevIndex++;
-        }
-    }
-
-    //While there is still operator in the operator stack, pop all of them to the output Postfix queue
-    while (!operator_stack.isEmpty()) {
-        //Enqueue the top operator
-        postfix_queue->enqueue( operator_stack.peek() );
-        operator_stack.pop(); // Pop the top operator
-    }
-}
-
-bool isOperator(char c) { return c == '+' || c == '-' || c == '*' || c == '/' || c == '%' || c == '^' || c == '~' || c == '&'; }
-bool isLeftParenthesis(char c) { return c == '('; }
-bool isRightParenthesis(char c) { return c == ')'; }
-
-bool isUnaryOperator(const char *infix) {
-    if (*infix == '-' || *infix == '+') {
-        infix++;
-        if (isdigit(*(infix))) return true;
-        else {
-            //while (*infix == WHITESPACES) infix++;
-            if (isLeftParenthesis(*infix)) return true;
-        }
-    }
-
-    return false;
-}
-
-void clearWhiteSpaces(const char* infix, int *currentIndex, int prevIndex) {
-    int moves = *currentIndex - prevIndex + 1;
-    *currentIndex = *currentIndex + 1;
-    while (*(infix + moves) == WHITESPACE) { moves++; *currentIndex = *currentIndex + 1; }
-}
-
-char getOperatorAssociativity(char c) {
-    if (c == '^' || c == '~' || c == '&') return 'r';
-    else return 'l';
-}
-
-int getOperatorPrecedence(char c) {
-    if (c == '(') return 0;
-    else if (c == '+' || c == '-') return 1;
-    else if (c == '*' || c == '/' || c == '%') return 2;
-    else if (c == '^') return 3;
-    else return 4;
-}
-
-void readNextInteger(char target[], const char *userInput, int* currentIndex) {
-    int moves = 0;
-    //Find the next index of whitespace (nextIndex) from the current index
-    while (*(userInput + moves) && *(userInput + moves) != WHITESPACE && isdigit(*(userInput + moves))) moves++;
-    //Get the word from currentIndex to nextIndex
-    int j = *currentIndex;
-    int i = 0;
-    while (j != *currentIndex + moves)
-    {
-        *(target + i) = userInput[j - *currentIndex];
-        i++; j++;
-    }
-    *currentIndex = *currentIndex + moves - 1;
-}
-
-void leftParenthesisTokenHandling(const char *infix, Stack *operator_stack) {
-    char tempToken[] = {*infix};
-    operator_stack->push(tempToken);      //push to the operator stack
-}
-
-void rightParenthesisTokenHandling(Queue *postfix_queue, Stack *operator_stack) {
-    while (operator_stack->peek()[0] != '(') { // While the first element of the stack being popped is not "("
-        postfix_queue->enqueue( operator_stack->peek() ); // enqueue the operator
-        operator_stack->pop(); //pop the operator
-    }
-    operator_stack->pop(); //Pop out the "(" and discard it
-}
-
-void operatorTokenHandling(const char *infix, Queue *postfix_queue, Stack *operator_stack) {
-    while ((!operator_stack->isEmpty()) // While there are operators in the operator stack
-           && ((getOperatorPrecedence(operator_stack->peek()[0]) > getOperatorPrecedence(*infix)) // Or there is an operator at the top of the stack with greater precedence
-               // Or there is an operator at the top of the stack with equal precedence and 'left' associativity
-               || (getOperatorPrecedence(operator_stack->peek()[0]) == getOperatorPrecedence(*infix) && getOperatorAssociativity(*infix) == 'l')
-           )) {
-        //Enqueue the top operator
-        postfix_queue->enqueue( operator_stack->peek() );
-        operator_stack->pop(); // Pop the top operator
-
-    }
-
-    char tempToken[] = {*infix};
-    operator_stack->push(tempToken); // Push the temp operator token to the stack
-
-}
-
-void integerTokenHandling(char *infix, Queue *postfix_queue, int *currentIndex) {
-    char tempInt[MAX_ARG_LENGTH] = {};
-    readNextInteger(tempInt, infix, currentIndex); //Read the next integer token
-    postfix_queue->enqueue(tempInt);
-
-}
-
-void unaryOperatorTokenHandling(const char *infix, Stack *operator_stack) {
-    if (*infix == '-') {
-        char tempToken[] = {"~"};
-        operator_stack->push(tempToken);
-    }
-    else {
-        char tempToken[] = {"&"};
-        operator_stack->push(tempToken);
-    }
-}
-
-//-------------------------------- End Infix to Postfix ------------------------------//
-
 
 //---------------------------------- Processing Input --------------------------------//
 
@@ -302,9 +152,6 @@ bool userWantExit(char userInput[]) {
     char Exit[] = "Exit";
     return compare(userInput, Exit);
 }
-
-
-
 
 //---------------------------------- End Processing Input --------------------------------//
 
@@ -424,6 +271,160 @@ void printErrorMessage(validation val) {
 }
 
 //---------------------------------- End Validation --------------------------------//
+
+//---------------------------------- Infix to Postfix --------------------------------//
+void convertInfixToPostfix(char *infix, Queue *postfix_queue){
+    Stack operator_stack;
+    int currentIndex = 0, prevIndex = 0;
+
+    while (*(infix)) {
+        //Remember the previous pointer of infix
+        prevIndex = currentIndex;
+
+        //If the token being read is left parenthesis "("
+        if (isLeftParenthesis(*(infix))) {
+            leftParenthesisTokenHandling(infix, &operator_stack);
+            clearWhiteSpaces(infix, &currentIndex, prevIndex);
+        }
+
+            // If the token being read is right parenthesis ")"
+        else if (isRightParenthesis(*(infix))) {
+            rightParenthesisTokenHandling(postfix_queue, &operator_stack);
+            clearWhiteSpaces(infix, &currentIndex, prevIndex);
+        }
+
+            // If the token being read is an operator
+        else if ( isOperator(*(infix)) ) {
+            if (isUnaryOperator(infix)) unaryOperatorTokenHandling(infix, &operator_stack);
+            else operatorTokenHandling(infix, postfix_queue, &operator_stack);
+            clearWhiteSpaces(infix, &currentIndex, prevIndex);
+        }
+
+            //If the token being read is an integer
+        else {
+            integerTokenHandling(infix, postfix_queue, &currentIndex);
+            clearWhiteSpaces(infix, &currentIndex, prevIndex);
+        }
+
+        //Move the 'infix' pointer from prevIndex to currentIndex position
+        while (prevIndex != currentIndex) {
+            infix++; prevIndex++;
+        }
+    }
+
+    //While there is still operator in the operator stack, pop all of them to the output Postfix queue
+    while (!operator_stack.isEmpty()) {
+        //Enqueue the top operator
+        postfix_queue->enqueue( operator_stack.peek() );
+        operator_stack.pop(); // Pop the top operator
+    }
+}
+
+bool isOperator(char c) { return c == '+' || c == '-' || c == '*' || c == '/' || c == '%' || c == '^' || c == '~' || c == '&'; }
+bool isLeftParenthesis(char c) { return c == '('; }
+bool isRightParenthesis(char c) { return c == ')'; }
+
+bool isUnaryOperator(const char *infix) {
+    if (*infix == '-' || *infix == '+') {
+        infix++;
+        if (isdigit(*(infix))) return true;
+        else {
+            //while (*infix == WHITESPACES) infix++;
+            if (isLeftParenthesis(*infix)) return true;
+        }
+    }
+
+    return false;
+}
+
+void clearWhiteSpaces(const char* infix, int *currentIndex, int prevIndex) {
+    int moves = *currentIndex - prevIndex + 1;
+    *currentIndex = *currentIndex + 1;
+    while (*(infix + moves) == WHITESPACE) { moves++; *currentIndex = *currentIndex + 1; }
+}
+
+char getOperatorAssociativity(char c) {
+    if (c == '^' || c == '~' || c == '&') return 'r';
+    else return 'l';
+}
+
+int getOperatorPrecedence(char c) {
+    if (c == '(') return 0;
+    else if (c == '+' || c == '-') return 1;
+    else if (c == '*' || c == '/' || c == '%') return 2;
+    else if (c == '^') return 3;
+    else return 4;
+}
+
+void readNextInteger(char target[], const char *userInput, int* currentIndex) {
+    int moves = 0;
+    //Find the next index of whitespace (nextIndex) from the current index
+    while (*(userInput + moves) && *(userInput + moves) != WHITESPACE && isdigit(*(userInput + moves))) moves++;
+    //Get the word from currentIndex to nextIndex
+    int j = *currentIndex;
+    int i = 0;
+    while (j != *currentIndex + moves)
+    {
+        *(target + i) = userInput[j - *currentIndex];
+        i++; j++;
+    }
+    *currentIndex = *currentIndex + moves - 1;
+}
+
+void leftParenthesisTokenHandling(const char *infix, Stack *operator_stack) {
+    char tempToken[] = {*infix};
+    operator_stack->push(tempToken);      //push to the operator stack
+}
+
+void rightParenthesisTokenHandling(Queue *postfix_queue, Stack *operator_stack) {
+    while (operator_stack->peek()[0] != '(') { // While the first element of the stack being popped is not "("
+        postfix_queue->enqueue( operator_stack->peek() ); // enqueue the operator
+        operator_stack->pop(); //pop the operator
+    }
+    operator_stack->pop(); //Pop out the "(" and discard it
+}
+
+void operatorTokenHandling(const char *infix, Queue *postfix_queue, Stack *operator_stack) {
+    while ((!operator_stack->isEmpty()) // While there are operators in the operator stack
+           && ((getOperatorPrecedence(operator_stack->peek()[0]) > getOperatorPrecedence(*infix)) // Or there is an operator at the top of the stack with greater precedence
+               // Or there is an operator at the top of the stack with equal precedence and 'left' associativity
+               || (getOperatorPrecedence(operator_stack->peek()[0]) == getOperatorPrecedence(*infix) && getOperatorAssociativity(*infix) == 'l')
+           )) {
+        //Enqueue the top operator
+        postfix_queue->enqueue( operator_stack->peek() );
+        operator_stack->pop(); // Pop the top operator
+
+    }
+
+//    char tempToken[1] = {infix[0]};                           //Cac cac cac cac cac cac cac cac cac cac cac cac c++
+    operator_stack->push(*infix); // Push the temp operator token to the stack
+
+}
+
+void integerTokenHandling(char *infix, Queue *postfix_queue, int *currentIndex) {
+    char tempInt[MAX_ARG_LENGTH] = {};
+    readNextInteger(tempInt, infix, currentIndex); //Read the next integer token
+    postfix_queue->enqueue(tempInt);
+
+}
+
+void unaryOperatorTokenHandling(const char *infix, Stack *operator_stack) {
+    if (*infix == '-') {
+        char tempToken[] = {"~"};
+        operator_stack->push(tempToken);
+    }
+    else {
+        char tempToken[] = {"&"};
+        operator_stack->push(tempToken);
+    }
+}
+
+//-------------------------------- End Infix to Postfix ------------------------------//
+
+
+
+//-------------------------------- Calculation ------------------------------//
+
 int add(int arg1, int arg2) {
     return arg1 + arg2;
 }
@@ -491,7 +492,42 @@ void operateCalculation(int arg1, char op, int arg2) {
     }
     printResult(result);
 }
+//
+//char* convertIntegerToCharArr(char* num, bool isNegative){
+//
+//}
+//
+//void evaluatePostfixExpression(Queue *postfix_queue) {
+//    Stack cal_stack;
+//
+//    while (!postfix_queue->isEmpty())
+//    {
+//        char tempToken = postfix_queue->peek()[0];
+//        if ( isOperator(tempToken) )
+//        {
+//            if (tempToken == '~') {
+//
+//            }
+//            else if (tempToken == '&') {
+//                continue;
+//            }
+//            else{
+//                int arg2 = cal_stack->peek(true); cal_stack->pop();
+//                int arg1 = cal_stack->peek(true); cal_stack->pop();
+//                calculator calculator(arg1, arg2, tempToken);
+//                int result = calculator.operateCalculation();
+//                cal_stack->push(result);
+//            }
+//            postfix_queue->dequeue();
+//        }
+//        else {
+//            cal_stack.push(postfix_queue->peek());
+//            postfix_queue->dequeue();
+//        }
+//    }
+//}
 
+//-------------------------------- End calculation ------------------------------//
 //---------Exit---------//
 void printExitMessage() {
     const char* exitMessage =
@@ -501,3 +537,4 @@ void printExitMessage() {
             "s3757281,s3757281@rmit.edu.vn,MinhQuang,Tran\n";
     printf("%s", exitMessage);
 }
+

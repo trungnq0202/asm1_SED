@@ -5,11 +5,15 @@
 #include "Node.h"
 
 Node::Node(const char* data) {
-    // FIXME: probably loop for 100 chars -> not optimize
-    // check this
-    // strcpy() equivalent:
     this->next = nullptr;
-    for (unsigned int i = 0; i < sizeof(data); i++) {
-        this->data[i] = *(data + i);
+    int index = 0;
+    while (*data){
+        this->data[index] = *data;
+        index++; data++;
     }
+}
+
+Node::Node(char data) {
+    this->next = nullptr;
+    this->data[0] = data;
 }

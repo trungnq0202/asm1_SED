@@ -13,6 +13,7 @@ public:
     bool isEmpty();
     char* peek();
     void push(char* data);
+    void push(char op);
     void pop();
     Stack();
 private:

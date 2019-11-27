@@ -1,3 +1,3 @@
-/home/trungngo/Desktop/asm1_SED/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/trungngo/Desktop/asm1_SED/cmake-build-debug/CMakeFiles/asm1_SED.dir
-/home/trungngo/Desktop/asm1_SED/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/quangtrung/Desktop/RMIT/SEM3-2019/Software Engineering Design/asm/asm1_SED/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/quangtrung/Desktop/RMIT/SEM3-2019/Software Engineering Design/asm/asm1_SED/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/quangtrung/Desktop/RMIT/SEM3-2019/Software Engineering Design/asm/asm1_SED/cmake-build-debug/CMakeFiles/asm1_SED.dir

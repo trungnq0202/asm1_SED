@@ -34,19 +34,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /snap/clion/92/bin/cmake/linux/bin/cmake
+CMAKE_COMMAND = "/Users/quangtrung/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.7142.39/CLion.app/Contents/bin/cmake/mac/bin/cmake"
 
 # The command to remove a file.
-RM = /snap/clion/92/bin/cmake/linux/bin/cmake -E remove -f
+RM = "/Users/quangtrung/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/192.7142.39/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/trungngo/Desktop/asm1_SED
+CMAKE_SOURCE_DIR = "/Users/quangtrung/Desktop/RMIT/SEM3-2019/Software Engineering Design/asm/asm1_SED"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/trungngo/Desktop/asm1_SED/cmake-build-debug
+CMAKE_BINARY_DIR = "/Users/quangtrung/Desktop/RMIT/SEM3-2019/Software Engineering Design/asm/asm1_SED/cmake-build-debug"
 
 # Include any dependencies generated for this target.
 include CMakeFiles/asm1_SED.dir/depend.make
@@ -59,55 +59,55 @@ include CMakeFiles/asm1_SED.dir/flags.make
 
 CMakeFiles/asm1_SED.dir/main.cpp.o: CMakeFiles/asm1_SED.dir/flags.make
 CMakeFiles/asm1_SED.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/trungngo/Desktop/asm1_SED/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/asm1_SED.dir/main.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/asm1_SED.dir/main.cpp.o -c /home/trungngo/Desktop/asm1_SED/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/quangtrung/Desktop/RMIT/SEM3-2019/Software Engineering Design/asm/asm1_SED/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/asm1_SED.dir/main.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/asm1_SED.dir/main.cpp.o -c "/Users/quangtrung/Desktop/RMIT/SEM3-2019/Software Engineering Design/asm/asm1_SED/main.cpp"
 
 CMakeFiles/asm1_SED.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/asm1_SED.dir/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/trungngo/Desktop/asm1_SED/main.cpp > CMakeFiles/asm1_SED.dir/main.cpp.i
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/quangtrung/Desktop/RMIT/SEM3-2019/Software Engineering Design/asm/asm1_SED/main.cpp" > CMakeFiles/asm1_SED.dir/main.cpp.i
 
 CMakeFiles/asm1_SED.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/asm1_SED.dir/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/trungngo/Desktop/asm1_SED/main.cpp -o CMakeFiles/asm1_SED.dir/main.cpp.s
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/quangtrung/Desktop/RMIT/SEM3-2019/Software Engineering Design/asm/asm1_SED/main.cpp" -o CMakeFiles/asm1_SED.dir/main.cpp.s
 
 CMakeFiles/asm1_SED.dir/Stack.cpp.o: CMakeFiles/asm1_SED.dir/flags.make
 CMakeFiles/asm1_SED.dir/Stack.cpp.o: ../Stack.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/trungngo/Desktop/asm1_SED/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/asm1_SED.dir/Stack.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/asm1_SED.dir/Stack.cpp.o -c /home/trungngo/Desktop/asm1_SED/Stack.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/quangtrung/Desktop/RMIT/SEM3-2019/Software Engineering Design/asm/asm1_SED/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/asm1_SED.dir/Stack.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/asm1_SED.dir/Stack.cpp.o -c "/Users/quangtrung/Desktop/RMIT/SEM3-2019/Software Engineering Design/asm/asm1_SED/Stack.cpp"
 
 CMakeFiles/asm1_SED.dir/Stack.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/asm1_SED.dir/Stack.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/trungngo/Desktop/asm1_SED/Stack.cpp > CMakeFiles/asm1_SED.dir/Stack.cpp.i
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/quangtrung/Desktop/RMIT/SEM3-2019/Software Engineering Design/asm/asm1_SED/Stack.cpp" > CMakeFiles/asm1_SED.dir/Stack.cpp.i
 
 CMakeFiles/asm1_SED.dir/Stack.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/asm1_SED.dir/Stack.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/trungngo/Desktop/asm1_SED/Stack.cpp -o CMakeFiles/asm1_SED.dir/Stack.cpp.s
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/quangtrung/Desktop/RMIT/SEM3-2019/Software Engineering Design/asm/asm1_SED/Stack.cpp" -o CMakeFiles/asm1_SED.dir/Stack.cpp.s
 
 CMakeFiles/asm1_SED.dir/Queue.cpp.o: CMakeFiles/asm1_SED.dir/flags.make
 CMakeFiles/asm1_SED.dir/Queue.cpp.o: ../Queue.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/trungngo/Desktop/asm1_SED/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/asm1_SED.dir/Queue.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/asm1_SED.dir/Queue.cpp.o -c /home/trungngo/Desktop/asm1_SED/Queue.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/quangtrung/Desktop/RMIT/SEM3-2019/Software Engineering Design/asm/asm1_SED/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/asm1_SED.dir/Queue.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/asm1_SED.dir/Queue.cpp.o -c "/Users/quangtrung/Desktop/RMIT/SEM3-2019/Software Engineering Design/asm/asm1_SED/Queue.cpp"
 
 CMakeFiles/asm1_SED.dir/Queue.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/asm1_SED.dir/Queue.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/trungngo/Desktop/asm1_SED/Queue.cpp > CMakeFiles/asm1_SED.dir/Queue.cpp.i
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/quangtrung/Desktop/RMIT/SEM3-2019/Software Engineering Design/asm/asm1_SED/Queue.cpp" > CMakeFiles/asm1_SED.dir/Queue.cpp.i
 
 CMakeFiles/asm1_SED.dir/Queue.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/asm1_SED.dir/Queue.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/trungngo/Desktop/asm1_SED/Queue.cpp -o CMakeFiles/asm1_SED.dir/Queue.cpp.s
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/quangtrung/Desktop/RMIT/SEM3-2019/Software Engineering Design/asm/asm1_SED/Queue.cpp" -o CMakeFiles/asm1_SED.dir/Queue.cpp.s
 
 CMakeFiles/asm1_SED.dir/Node.cpp.o: CMakeFiles/asm1_SED.dir/flags.make
 CMakeFiles/asm1_SED.dir/Node.cpp.o: ../Node.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/trungngo/Desktop/asm1_SED/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/asm1_SED.dir/Node.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/asm1_SED.dir/Node.cpp.o -c /home/trungngo/Desktop/asm1_SED/Node.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/quangtrung/Desktop/RMIT/SEM3-2019/Software Engineering Design/asm/asm1_SED/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/asm1_SED.dir/Node.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/asm1_SED.dir/Node.cpp.o -c "/Users/quangtrung/Desktop/RMIT/SEM3-2019/Software Engineering Design/asm/asm1_SED/Node.cpp"
 
 CMakeFiles/asm1_SED.dir/Node.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/asm1_SED.dir/Node.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/trungngo/Desktop/asm1_SED/Node.cpp > CMakeFiles/asm1_SED.dir/Node.cpp.i
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/quangtrung/Desktop/RMIT/SEM3-2019/Software Engineering Design/asm/asm1_SED/Node.cpp" > CMakeFiles/asm1_SED.dir/Node.cpp.i
 
 CMakeFiles/asm1_SED.dir/Node.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/asm1_SED.dir/Node.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/trungngo/Desktop/asm1_SED/Node.cpp -o CMakeFiles/asm1_SED.dir/Node.cpp.s
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/quangtrung/Desktop/RMIT/SEM3-2019/Software Engineering Design/asm/asm1_SED/Node.cpp" -o CMakeFiles/asm1_SED.dir/Node.cpp.s
 
 # Object files for target asm1_SED
 asm1_SED_OBJECTS = \
@@ -125,7 +125,7 @@ asm1_SED: CMakeFiles/asm1_SED.dir/Queue.cpp.o
 asm1_SED: CMakeFiles/asm1_SED.dir/Node.cpp.o
 asm1_SED: CMakeFiles/asm1_SED.dir/build.make
 asm1_SED: CMakeFiles/asm1_SED.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/trungngo/Desktop/asm1_SED/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable asm1_SED"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/Users/quangtrung/Desktop/RMIT/SEM3-2019/Software Engineering Design/asm/asm1_SED/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable asm1_SED"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/asm1_SED.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -138,6 +138,6 @@ CMakeFiles/asm1_SED.dir/clean:
 .PHONY : CMakeFiles/asm1_SED.dir/clean
 
 CMakeFiles/asm1_SED.dir/depend:
-	cd /home/trungngo/Desktop/asm1_SED/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/trungngo/Desktop/asm1_SED /home/trungngo/Desktop/asm1_SED /home/trungngo/Desktop/asm1_SED/cmake-build-debug /home/trungngo/Desktop/asm1_SED/cmake-build-debug /home/trungngo/Desktop/asm1_SED/cmake-build-debug/CMakeFiles/asm1_SED.dir/DependInfo.cmake --color=$(COLOR)
+	cd "/Users/quangtrung/Desktop/RMIT/SEM3-2019/Software Engineering Design/asm/asm1_SED/cmake-build-debug" && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "/Users/quangtrung/Desktop/RMIT/SEM3-2019/Software Engineering Design/asm/asm1_SED" "/Users/quangtrung/Desktop/RMIT/SEM3-2019/Software Engineering Design/asm/asm1_SED" "/Users/quangtrung/Desktop/RMIT/SEM3-2019/Software Engineering Design/asm/asm1_SED/cmake-build-debug" "/Users/quangtrung/Desktop/RMIT/SEM3-2019/Software Engineering Design/asm/asm1_SED/cmake-build-debug" "/Users/quangtrung/Desktop/RMIT/SEM3-2019/Software Engineering Design/asm/asm1_SED/cmake-build-debug/CMakeFiles/asm1_SED.dir/DependInfo.cmake" --color=$(COLOR)
 .PHONY : CMakeFiles/asm1_SED.dir/depend
 

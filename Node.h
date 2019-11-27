@@ -6,12 +6,13 @@
 #define ASM1_SED_NODE_H
 
 
-#define MAX_DATA_SIZE   100
+#define MAX_DATA_SIZE 100
 
 class Node {
 public:
     char data[MAX_DATA_SIZE] = {0};
     explicit Node(const char* data);
+    explicit Node(char data);
     Node* next;
 private:
 };

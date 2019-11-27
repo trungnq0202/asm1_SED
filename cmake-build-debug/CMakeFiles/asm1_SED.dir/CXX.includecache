@@ -6,9 +6,25 @@
 
 #IncludeRegexTransform: 
 
-/home/trungngo/Desktop/asm1_SED/Node.cpp
+/Users/quangtrung/Desktop/RMIT/SEM3-2019/Software Engineering Design/asm/asm1_SED/Node.cpp
 Node.h
-/home/trungngo/Desktop/asm1_SED/Node.h
+/Users/quangtrung/Desktop/RMIT/SEM3-2019/Software Engineering Design/asm/asm1_SED/Node.h
 
-/home/trungngo/Desktop/asm1_SED/Node.h
+/Users/quangtrung/Desktop/RMIT/SEM3-2019/Software Engineering Design/asm/asm1_SED/Node.h
+
+/Users/quangtrung/Desktop/RMIT/SEM3-2019/Software Engineering Design/asm/asm1_SED/Queue.h
+Node.h
+/Users/quangtrung/Desktop/RMIT/SEM3-2019/Software Engineering Design/asm/asm1_SED/Node.h
+
+/Users/quangtrung/Desktop/RMIT/SEM3-2019/Software Engineering Design/asm/asm1_SED/Stack.h
+Node.h
+/Users/quangtrung/Desktop/RMIT/SEM3-2019/Software Engineering Design/asm/asm1_SED/Node.h
+
+/Users/quangtrung/Desktop/RMIT/SEM3-2019/Software Engineering Design/asm/asm1_SED/main.cpp
+iostream
+-
+Stack.h
+/Users/quangtrung/Desktop/RMIT/SEM3-2019/Software Engineering Design/asm/asm1_SED/Stack.h
+Queue.h
+/Users/quangtrung/Desktop/RMIT/SEM3-2019/Software Engineering Design/asm/asm1_SED/Queue.h
 

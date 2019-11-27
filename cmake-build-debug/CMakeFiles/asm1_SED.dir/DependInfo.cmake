@@ -4,12 +4,12 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/trungngo/Desktop/asm1_SED/Node.cpp" "/home/trungngo/Desktop/asm1_SED/cmake-build-debug/CMakeFiles/asm1_SED.dir/Node.cpp.o"
-  "/home/trungngo/Desktop/asm1_SED/Queue.cpp" "/home/trungngo/Desktop/asm1_SED/cmake-build-debug/CMakeFiles/asm1_SED.dir/Queue.cpp.o"
-  "/home/trungngo/Desktop/asm1_SED/Stack.cpp" "/home/trungngo/Desktop/asm1_SED/cmake-build-debug/CMakeFiles/asm1_SED.dir/Stack.cpp.o"
-  "/home/trungngo/Desktop/asm1_SED/main.cpp" "/home/trungngo/Desktop/asm1_SED/cmake-build-debug/CMakeFiles/asm1_SED.dir/main.cpp.o"
+  "/Users/quangtrung/Desktop/RMIT/SEM3-2019/Software Engineering Design/asm/asm1_SED/Node.cpp" "/Users/quangtrung/Desktop/RMIT/SEM3-2019/Software Engineering Design/asm/asm1_SED/cmake-build-debug/CMakeFiles/asm1_SED.dir/Node.cpp.o"
+  "/Users/quangtrung/Desktop/RMIT/SEM3-2019/Software Engineering Design/asm/asm1_SED/Queue.cpp" "/Users/quangtrung/Desktop/RMIT/SEM3-2019/Software Engineering Design/asm/asm1_SED/cmake-build-debug/CMakeFiles/asm1_SED.dir/Queue.cpp.o"
+  "/Users/quangtrung/Desktop/RMIT/SEM3-2019/Software Engineering Design/asm/asm1_SED/Stack.cpp" "/Users/quangtrung/Desktop/RMIT/SEM3-2019/Software Engineering Design/asm/asm1_SED/cmake-build-debug/CMakeFiles/asm1_SED.dir/Stack.cpp.o"
+  "/Users/quangtrung/Desktop/RMIT/SEM3-2019/Software Engineering Design/asm/asm1_SED/main.cpp" "/Users/quangtrung/Desktop/RMIT/SEM3-2019/Software Engineering Design/asm/asm1_SED/cmake-build-debug/CMakeFiles/asm1_SED.dir/main.cpp.o"
   )
-set(CMAKE_CXX_COMPILER_ID "GNU")
+set(CMAKE_CXX_COMPILER_ID "AppleClang")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
