@@ -17,3 +17,7 @@ Node::Node(char data) {
     this->next = nullptr;
     this->data[0] = data;
 }
+
+Node::Node(int data) {
+    this->dataInt = data;
+}

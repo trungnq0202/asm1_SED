@@ -11,8 +11,10 @@
 class Node {
 public:
     char data[MAX_DATA_SIZE] = {0};
+    int dataInt = 0;
     explicit Node(const char* data);
     explicit Node(char data);
+    explicit Node(int data);
     Node* next;
 private:
 };

@@ -75,7 +75,9 @@ int remainder(int arg1, int arg2);                  // Taking remainder
 void printResult(int result);                       //Print result to console
 bool isDividingByZero(int arg);                     //Check division by 0 error
 void parseUserInput(int* arg1, char* op, int* arg2, char arg1CharArr[], char opCharArr[], char arg2CharArr[]);
-void operateCalculation(int arg1, char op, int arg2);
+int operateCalculation(int arg1, char op, int arg2);
+void convertIntToCharArr(int num, char target[], bool isNegative);
+char getDigitFromChar(unsigned int digit);
 void evaluatePostfixExpression(Queue *postfix_queue);
 
 //----------Exit------------//
@@ -96,13 +98,13 @@ int main() {
         convertInfixToPostfix(userInput, &postfix_queue);
 
         //-------- Test print postfix ---------//
-        while (!postfix_queue.isEmpty()) {
-            cout << postfix_queue.peek() << " ";
-            postfix_queue.dequeue();
-        }
-        cout << endl;
+//        while (!postfix_queue.isEmpty()) {
+//            cout << postfix_queue.peek() << " ";
+//            postfix_queue.dequeue();
+//        }
+//        cout << endl;
 
-//        evaluatePostfixExpression(&postfix_queue);
+        evaluatePostfixExpression(&postfix_queue);
 //        if (validationResult != PASS) {
 //            printErrorMessage(validationResult);
 //            continue;
@@ -459,73 +461,113 @@ void parseUserInput(int* arg1, char* op, int* arg2, char arg1CharArr[], char opC
     *arg2 = atoi(arg2CharArr);
 }
 
-void operateCalculation(int arg1, char op, int arg2) {
+int operateCalculation(int arg1, char op, int arg2) {
     int result = 0;
     switch (op) {
         case '+': {
-            result = add(arg1, arg2);
-            break;
+            return  add(arg1, arg2);
         }
         case '-': {
-            result = subtract(arg1, arg2);
-            break;
+            return subtract(arg1, arg2);
         }
         case '/': {
             if (isDividingByZero(arg2)) {
                 printErrorMessage(DIVISION_BY_ZERO);
-                return;
+                return 0;
             }
-            result = divide(arg1, arg2);
-            break;
+            return divide(arg1, arg2);
         }
         case '*': {
-            result = multiply(arg1, arg2);
-            break;
+            return multiply(arg1, arg2);
         }
         case '%': {
-            result = remainder(arg1, arg2);
-            break;
+            return remainder(arg1, arg2);
         }
         default: {
-            break;
+            return 0;
         }
     }
-    printResult(result);
 }
-//
-//char* convertIntegerToCharArr(char* num, bool isNegative){
+
+//char getDigitFromChar(unsigned int digit){
+//    switch (digit){
+//        case 0:
+//            return '0';
+//        case 1:
+//            return '1';
+//        case 2:
+//            return '2';
+//        case 3:
+//            return '3';
+//        case 4:
+//            return '4';
+//        case 5:
+//            return '5';
+//        case 6:
+//            return '6';
+//        case 7:
+//            return '7';
+//        case 8:
+//            return '8';
+//        case 9:
+//            return '9';
+//        default: return ' ';
+//    }
 //
 //}
-//
-//void evaluatePostfixExpression(Queue *postfix_queue) {
-//    Stack cal_stack;
-//
-//    while (!postfix_queue->isEmpty())
-//    {
-//        char tempToken = postfix_queue->peek()[0];
-//        if ( isOperator(tempToken) )
-//        {
-//            if (tempToken == '~') {
-//
-//            }
-//            else if (tempToken == '&') {
-//                continue;
-//            }
-//            else{
-//                int arg2 = cal_stack->peek(true); cal_stack->pop();
-//                int arg1 = cal_stack->peek(true); cal_stack->pop();
-//                calculator calculator(arg1, arg2, tempToken);
-//                int result = calculator.operateCalculation();
-//                cal_stack->push(result);
-//            }
-//            postfix_queue->dequeue();
+
+//void convertIntToCharArr(int num, char target[], bool isNegative){
+//    int index = 0;
+//    if (isNegative){
+//        target[0] = '-'; index++;
+//        while (num) {
+//            char tempDigit = getDigitFromChar(num % 10 );
+//            target[index] = tempDigit; index++;
+//            num /= 10;
 //        }
-//        else {
-//            cal_stack.push(postfix_queue->peek());
-//            postfix_queue->dequeue();
+//    } else {
+//        while (num) {
+//            char tempDigit = getDigitFromChar(num % 10 );
+//            target[index] = tempDigit; index++;
+//            num /= 10;
 //        }
 //    }
 //}
+
+
+
+void evaluatePostfixExpression(Queue *postfix_queue) {
+    Stack cal_stack;
+
+    while (!postfix_queue->isEmpty())
+    {
+        char tempToken = postfix_queue->peek()[0];
+        if ( isOperator(tempToken) )
+        {
+            if (tempToken == '~') {
+                int tempInt = cal_stack.peek(true); cal_stack.pop();
+                tempInt = -tempInt;
+                cal_stack.push(tempInt);
+            }
+            else if (tempToken == '&') {
+                continue;
+            }
+            else{
+                int arg2 = cal_stack.peek(true); cal_stack.pop();
+                int arg1 = cal_stack.peek(true); cal_stack.pop();
+                int result = operateCalculation(arg1, tempToken, arg2);
+                cal_stack.push(result);
+
+            }
+            postfix_queue->dequeue();
+        }
+        else {
+            cal_stack.push(atoi(postfix_queue->peek()));
+            postfix_queue->dequeue();
+        }
+    }
+    printResult(cal_stack.peek(true));
+}
 
 //-------------------------------- End calculation ------------------------------//
 //---------Exit---------//

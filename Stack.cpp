@@ -36,5 +36,17 @@ void Stack::push(char op) {
     this->top = node;
 }
 
+int Stack::peek(bool isInt) {
+    return this->top->dataInt;
+}
+
+void Stack::push(int data) {
+    Node* node = new Node(data);
+    node->next = this->top;
+    this->top = node;
+}
+
+
+
 
 

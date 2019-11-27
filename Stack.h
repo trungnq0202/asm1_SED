@@ -16,6 +16,10 @@ public:
     void push(char op);
     void pop();
     Stack();
+    //for int stack
+    void push(int data);
+    int peek(bool isInt);
+
 private:
     Node* top;
 };
