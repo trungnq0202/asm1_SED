@@ -29,8 +29,6 @@ void Stack::pop() {
 }
 
 void Stack::push(char op) {
-//    char tempOp[] = {};
-//    tempOp[0] = op;
     Node* node = new Node(op);
     node->next = this->top;
     this->top = node;
