@@ -187,6 +187,8 @@ void clearWhiteSpaces(const char* infix, int *currentIndex, int prevIndex) {
 
 
 bool isValidDecimalPoints(char decimalPoints[], int index) {
+    if (index == 1 && *(decimalPoints + 1) == '\0') return false;
+
     while ( *(decimalPoints + index) )
     {
         if (*(decimalPoints + index) != '0') return false;
