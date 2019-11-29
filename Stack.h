@@ -15,11 +15,11 @@ public:
     void push(char* data);
     void push(char op);
     void pop();
-    Stack();
     //for int stack
     void push(int data);
     int peek(bool isInt);
-
+    Stack();
+    ~Stack();
 private:
     Node* top;
 };

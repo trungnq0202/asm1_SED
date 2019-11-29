@@ -37,4 +37,8 @@ void Queue::dequeue() {
     delete detachedNode;
 }
 
-Queue::~Queue() = default;
+Queue::~Queue() {
+    while (!this->isEmpty()) {
+        this->dequeue();
+    }
+}

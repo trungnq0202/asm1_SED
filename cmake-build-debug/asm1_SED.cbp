@@ -8,100 +8,100 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/Users/quangtrung/Desktop/RMIT/SEM3-2019/Software Engineering Design/asm/asm1_SED/cmake-build-debug"/>
+				<Option working_dir="/Users/longb/CLionProjects/asm1_SED/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j16 -f &quot;/Users/quangtrung/Desktop/RMIT/SEM3-2019/Software\ Engineering\ Design/asm/asm1_SED/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j16 -f &quot;/Users/quangtrung/Desktop/RMIT/SEM3-2019/Software\ Engineering\ Design/asm/asm1_SED/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j16 -f &quot;/Users/quangtrung/Desktop/RMIT/SEM3-2019/Software\ Engineering\ Design/asm/asm1_SED/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j16 -f &quot;/Users/quangtrung/Desktop/RMIT/SEM3-2019/Software\ Engineering\ Design/asm/asm1_SED/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j6 -f &quot;/Users/longb/CLionProjects/asm1_SED/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j6 -f &quot;/Users/longb/CLionProjects/asm1_SED/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j6 -f &quot;/Users/longb/CLionProjects/asm1_SED/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j6 -f &quot;/Users/longb/CLionProjects/asm1_SED/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/Users/quangtrung/Desktop/RMIT/SEM3-2019/Software Engineering Design/asm/asm1_SED/cmake-build-debug"/>
+				<Option working_dir="/Users/longb/CLionProjects/asm1_SED/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j16 -f &quot;/Users/quangtrung/Desktop/RMIT/SEM3-2019/Software\ Engineering\ Design/asm/asm1_SED/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j16 -f &quot;/Users/quangtrung/Desktop/RMIT/SEM3-2019/Software\ Engineering\ Design/asm/asm1_SED/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j16 -f &quot;/Users/quangtrung/Desktop/RMIT/SEM3-2019/Software\ Engineering\ Design/asm/asm1_SED/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j16 -f &quot;/Users/quangtrung/Desktop/RMIT/SEM3-2019/Software\ Engineering\ Design/asm/asm1_SED/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j6 -f &quot;/Users/longb/CLionProjects/asm1_SED/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j6 -f &quot;/Users/longb/CLionProjects/asm1_SED/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j6 -f &quot;/Users/longb/CLionProjects/asm1_SED/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j6 -f &quot;/Users/longb/CLionProjects/asm1_SED/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/Users/quangtrung/Desktop/RMIT/SEM3-2019/Software Engineering Design/asm/asm1_SED/cmake-build-debug"/>
+				<Option working_dir="/Users/longb/CLionProjects/asm1_SED/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j16 -f &quot;/Users/quangtrung/Desktop/RMIT/SEM3-2019/Software\ Engineering\ Design/asm/asm1_SED/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j16 -f &quot;/Users/quangtrung/Desktop/RMIT/SEM3-2019/Software\ Engineering\ Design/asm/asm1_SED/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j16 -f &quot;/Users/quangtrung/Desktop/RMIT/SEM3-2019/Software\ Engineering\ Design/asm/asm1_SED/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j16 -f &quot;/Users/quangtrung/Desktop/RMIT/SEM3-2019/Software\ Engineering\ Design/asm/asm1_SED/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j6 -f &quot;/Users/longb/CLionProjects/asm1_SED/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j6 -f &quot;/Users/longb/CLionProjects/asm1_SED/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j6 -f &quot;/Users/longb/CLionProjects/asm1_SED/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j6 -f &quot;/Users/longb/CLionProjects/asm1_SED/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="asm1_SED">
-				<Option output="/Users/quangtrung/Desktop/RMIT/SEM3-2019/Software Engineering Design/asm/asm1_SED/cmake-build-debug/asm1_SED" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/quangtrung/Desktop/RMIT/SEM3-2019/Software Engineering Design/asm/asm1_SED/cmake-build-debug"/>
+				<Option output="/Users/longb/CLionProjects/asm1_SED/cmake-build-debug/asm1_SED" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/longb/CLionProjects/asm1_SED/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
 					<Add directory="/usr/local/include"/>
-					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/11.0.0/include"/>
-					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/11.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
 					<Add directory="/System/Library/Frameworks"/>
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j16 -f &quot;/Users/quangtrung/Desktop/RMIT/SEM3-2019/Software\ Engineering\ Design/asm/asm1_SED/cmake-build-debug/Makefile&quot;  VERBOSE=1 asm1_SED"/>
-					<CompileFile command="/usr/bin/make -j16 -f &quot;/Users/quangtrung/Desktop/RMIT/SEM3-2019/Software\ Engineering\ Design/asm/asm1_SED/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j16 -f &quot;/Users/quangtrung/Desktop/RMIT/SEM3-2019/Software\ Engineering\ Design/asm/asm1_SED/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j16 -f &quot;/Users/quangtrung/Desktop/RMIT/SEM3-2019/Software\ Engineering\ Design/asm/asm1_SED/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j6 -f &quot;/Users/longb/CLionProjects/asm1_SED/cmake-build-debug/Makefile&quot;  VERBOSE=1 asm1_SED"/>
+					<CompileFile command="/usr/bin/make -j6 -f &quot;/Users/longb/CLionProjects/asm1_SED/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j6 -f &quot;/Users/longb/CLionProjects/asm1_SED/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j6 -f &quot;/Users/longb/CLionProjects/asm1_SED/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="asm1_SED/fast">
-				<Option output="/Users/quangtrung/Desktop/RMIT/SEM3-2019/Software Engineering Design/asm/asm1_SED/cmake-build-debug/asm1_SED" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/quangtrung/Desktop/RMIT/SEM3-2019/Software Engineering Design/asm/asm1_SED/cmake-build-debug"/>
+				<Option output="/Users/longb/CLionProjects/asm1_SED/cmake-build-debug/asm1_SED" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/longb/CLionProjects/asm1_SED/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
 					<Add directory="/usr/local/include"/>
-					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/11.0.0/include"/>
-					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/11.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
 					<Add directory="/System/Library/Frameworks"/>
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j16 -f &quot;/Users/quangtrung/Desktop/RMIT/SEM3-2019/Software\ Engineering\ Design/asm/asm1_SED/cmake-build-debug/Makefile&quot;  VERBOSE=1 asm1_SED/fast"/>
-					<CompileFile command="/usr/bin/make -j16 -f &quot;/Users/quangtrung/Desktop/RMIT/SEM3-2019/Software\ Engineering\ Design/asm/asm1_SED/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j16 -f &quot;/Users/quangtrung/Desktop/RMIT/SEM3-2019/Software\ Engineering\ Design/asm/asm1_SED/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j16 -f &quot;/Users/quangtrung/Desktop/RMIT/SEM3-2019/Software\ Engineering\ Design/asm/asm1_SED/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j6 -f &quot;/Users/longb/CLionProjects/asm1_SED/cmake-build-debug/Makefile&quot;  VERBOSE=1 asm1_SED/fast"/>
+					<CompileFile command="/usr/bin/make -j6 -f &quot;/Users/longb/CLionProjects/asm1_SED/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j6 -f &quot;/Users/longb/CLionProjects/asm1_SED/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j6 -f &quot;/Users/longb/CLionProjects/asm1_SED/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/quangtrung/Desktop/RMIT/SEM3-2019/Software Engineering Design/asm/asm1_SED/Node.cpp">
+		<Unit filename="/Users/longb/CLionProjects/asm1_SED/Node.cpp">
 			<Option target="asm1_SED"/>
 		</Unit>
-		<Unit filename="/Users/quangtrung/Desktop/RMIT/SEM3-2019/Software Engineering Design/asm/asm1_SED/Node.h">
+		<Unit filename="/Users/longb/CLionProjects/asm1_SED/Node.h">
 			<Option target="asm1_SED"/>
 		</Unit>
-		<Unit filename="/Users/quangtrung/Desktop/RMIT/SEM3-2019/Software Engineering Design/asm/asm1_SED/Queue.cpp">
+		<Unit filename="/Users/longb/CLionProjects/asm1_SED/Queue.cpp">
 			<Option target="asm1_SED"/>
 		</Unit>
-		<Unit filename="/Users/quangtrung/Desktop/RMIT/SEM3-2019/Software Engineering Design/asm/asm1_SED/Queue.h">
+		<Unit filename="/Users/longb/CLionProjects/asm1_SED/Queue.h">
 			<Option target="asm1_SED"/>
 		</Unit>
-		<Unit filename="/Users/quangtrung/Desktop/RMIT/SEM3-2019/Software Engineering Design/asm/asm1_SED/Stack.cpp">
+		<Unit filename="/Users/longb/CLionProjects/asm1_SED/Stack.cpp">
 			<Option target="asm1_SED"/>
 		</Unit>
-		<Unit filename="/Users/quangtrung/Desktop/RMIT/SEM3-2019/Software Engineering Design/asm/asm1_SED/Stack.h">
+		<Unit filename="/Users/longb/CLionProjects/asm1_SED/Stack.h">
 			<Option target="asm1_SED"/>
 		</Unit>
-		<Unit filename="/Users/quangtrung/Desktop/RMIT/SEM3-2019/Software Engineering Design/asm/asm1_SED/main.cpp">
+		<Unit filename="/Users/longb/CLionProjects/asm1_SED/main.cpp">
 			<Option target="asm1_SED"/>
 		</Unit>
-		<Unit filename="/Users/quangtrung/Desktop/RMIT/SEM3-2019/Software Engineering Design/asm/asm1_SED/CMakeLists.txt">
+		<Unit filename="/Users/longb/CLionProjects/asm1_SED/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

@@ -8,6 +8,12 @@ Stack::Stack() {
     this->top = nullptr;
 }
 
+Stack::~Stack() {
+    while (!this->isEmpty()) {
+        this->pop();
+    }
+}
+
 bool Stack::isEmpty() {
     return this->top == nullptr;
 }
