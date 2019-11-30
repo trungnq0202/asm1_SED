@@ -26,59 +26,75 @@ typedef enum {
 //******************************************* Function prototypes *******************************************\\
 
 //------------------------------- Processing Input ------------------------------------//
-
-bool compare(const char *a, const char *b);         // compare 2 char arrays
-void trim(char charArr[]);                          // delete all whitespaces before and after user arguments
-void promptUserInput(char userInput[]);             // take user input
-bool userWantExit(char userInput[]);                // exit or not ? //read the next argument from input
+// compare 2 char arrays
+bool compare(const char *a, const char *b);
+// delete all whitespaces before and after user arguments
+void trim(char charArr[]);
+// take user input
+void promptUserInput(char userInput[]);
+// exit or not ?
+bool userWantExit(char userInput[]);
 
 //------------------------------- Validation Process ----------------------------------//
-bool isOperator(char c);							// Check if the temporary token is an operator ?
-bool isLeftParenthesis(char c);						// Check if the temporary token is an left parenthesis "("
-bool isRightParenthesis(char c);					// Check if the temporary token is an right parenthesis ")"
-bool isUnaryOperator(const char *infix);	        // Check if the temporary token is an unary operator "~" or "&"
-bool isValidInt(char number[]);                     // check valid input integer
-bool isInRange(char arg[]);                         // check if input integer is in range
-validation validate(const char *userInput);              // Validation process
-void printErrorMessage(validation val);             // print error message to console
+// Check if the temporary token is an operator ?
+bool isOperator(char c);
+// Check if the temporary token is an left parenthesis "("
+bool isLeftParenthesis(char c);
+// Check if the temporary token is an right parenthesis ")"
+bool isRightParenthesis(char c);
+// Check if the temporary token is an unary operator "~" or "&"
+bool isUnaryOperator(const char *infix);
+// check valid input integer
+bool isValidInt(char number[]);
+// check if input integer is in range
+bool isInRange(char arg[]);
+// Validation process
+validation validate(const char *userInput);
+// print error message to console
+void printErrorMessage(validation val);
 
 
 //--------------------------------- Infix to Postfix ----------------------------------//
 //--------- Shunting yard algorithm ---------//
-char getOperatorAssociativity(char c);				// Get the Associativity value of an operator
-int  getOperatorPrecedence(char c);					// Get the Precedence value of an operator
-void clearWhiteSpaces(const char *infix, int *currentIndex, int prevIndex); // Clear the whitespaces after the recently read token
-void readNextInteger(char target[], const char *userInput, int* currentIndex); //Read the next integer token
-
+//Get the Associativity value of an operator
+char getOperatorAssociativity(char c);
+//Get the Precedence value of an operator
+int  getOperatorPrecedence(char c);
+//Clear the whitespaces after the recently read token
+void clearWhiteSpaces(const char *infix, int *currentIndex, int prevIndex);
+//Read the next integer token
+void readNextInteger(char target[], const char *userInput, int* currentIndex);
 //Process handling if the temporary token being considered is an left parenthesis "("
 void leftParenthesisTokenHandling(const char *infix, Stack *operator_stack);
-
 //Process handling if the temporary token being considered is an right parenthesis ")"
 void rightParenthesisTokenHandling(Queue *postfixQueue, Stack *operator_stack);
-
 //Process handling if the temporary token being considered is and operator
 void operatorTokenHandling(const char *infix, Queue *postfixQueue, Stack *operator_stack);
-
 //Process handling if the temporary token being considered is an integer
 void integerTokenHandling(char *infix, Queue *postfixQueue, int *currentIndex);
-
 //Process handling if the temporary token being considered is an unary operator
 void unaryOperatorTokenHandling(const char *infix, Stack *operator_stack);
-
 //Process converting the infix expression given by the user to the postfix expression
 void convertInfixToPostfix(char *infix, Queue *postfixQueue);
 
-
 //----------Calculation-----------//
-int add(int arg1, int arg2);                        // addition
-int subtract(int arg1, int arg2);                   // subtraction
-int multiply(int arg1, int arg2);                   // multiplication
-int divide(int arg1, int arg2);                     // division
-int remainder(int arg1, int arg2);                  // Taking remainder
-void printResult(int result);                       //Print result to console
-bool isDividingByZero(int arg);                     //Check division by 0 error
-validation operateCalculation(int arg1, char op, int arg2);
-void evaluatePostfixExpression(Queue *postfixQueue); //Calculate the final result by evaluating the postfix expression,
+// addition
+int add(int arg1, int arg2);
+// subtraction
+int subtract(int arg1, int arg2);
+// multiplication
+int multiply(int arg1, int arg2);
+// division
+int divide(int arg1, int arg2);
+// Taking remainder
+int remainder(int arg1, int arg2);
+//Print result to console
+void printResult(int result);
+//Check division by 0 error
+bool isDividingByZero(int arg);
+validation operateCalculation(int arg1, char op, int arg2, int* result);
+//Calculate the final result by evaluating the postfix expression,
+void evaluatePostfixExpression(Queue *postfixQueue);
 
 //----------Exit------------//
 void printExitMessage();
@@ -86,7 +102,8 @@ void printExitMessage();
 int main() {
     while (true)
     {
-        char userInput[MAX_USER_INPUT_LENGTH] = {}; //Char array for storing user input(infix expression)
+        //Char array for storing user input(infix expression)
+        char userInput[MAX_USER_INPUT_LENGTH] = {};
 
         promptUserInput(userInput); //Taking input
         if (userWantExit(userInput)) {  //Exit?
@@ -101,13 +118,6 @@ int main() {
 
         Queue postfixQueue;                                //Create a queue for storing converted postfix expression from user input (infix expression)
         convertInfixToPostfix(userInput, &postfixQueue);   //Infix to Postfix process, stores the result in "postfixQueue"
-
-        //-------- Test print postfix ---------//
-//        while (!postfixQueue.isEmpty()) {
-//            cout << postfixQueue.peek() << " ";
-//            postfixQueue.dequeue();
-//        }
-//        cout << endl;
 
         evaluatePostfixExpression(&postfixQueue);          //Evaluate the postfix expression (calculate the final result)
 
@@ -154,7 +164,6 @@ void promptUserInput(char userInput[]) {
 
 bool userWantExit(char userInput[]) {
     char Exit[] = "Exit";
-//    if (userInput[0] == '\0') return false;
     return compare(userInput, Exit); //Check if the user input expression is "Exit"
 }
 
@@ -165,7 +174,6 @@ bool userWantExit(char userInput[]) {
 bool isOperator(char c) { return c == '+' || c == '-' || c == '*' || c == '/' || c == '%' || c == '^' || c == '~' || c == '&'; }
 bool isLeftParenthesis(char c) { return c == '('; }
 bool isRightParenthesis(char c) { return c == ')'; }
-
 bool isUnaryOperator(const char *infix) {
     if (*infix == '-' || *infix == '+') {
         infix++;
@@ -274,15 +282,15 @@ void printErrorMessage(validation val) {
             printf("Your input expression has invalid character(s)!\n");
             break;
         }
-        case NUMBER_OF_LEFT_RIGHT_PAREN_MISMATCH:{
+        case NUMBER_OF_LEFT_RIGHT_PAREN_MISMATCH: {
             printf("Your input expression has mismatch number of left and right parenthesises. More '(' than ')' or the opposite!\n");
             break;
         }
-        case EMPTY_CONTENT_WITHIN_A_PAREN_PAIR:{
+        case EMPTY_CONTENT_WITHIN_A_PAREN_PAIR: {
             printf("There is no expression between one (or many) pair(s) of parenthesises, expr = (expr)\n");
             break;
         }
-        case EMPTY_USER_INPUT:{
+        case EMPTY_USER_INPUT: {
             printf("You entered nothing!\n");
             break;
         }
@@ -464,7 +472,6 @@ void unaryOperatorTokenHandling(const char *infix, Stack *operator_stack) {
 //-------------------------------- End Infix to Postfix ------------------------------//
 
 
-
 //-------------------------------- Calculation ------------------------------//
 
 int add(int arg1, int arg2) {
@@ -542,7 +549,7 @@ validation operateCalculation(int arg1, char op, int arg2, int* result) {
 }
 
 void evaluatePostfixExpression(Queue *postfixQueue) {
-    Stack cal_stack;
+    Stack calStack;
 
     while (!postfixQueue->isEmpty())
     {
@@ -551,10 +558,10 @@ void evaluatePostfixExpression(Queue *postfixQueue) {
         {
             if (tempToken == '~') {
                 int tempInt = 0;
-                if (cal_stack.isEmpty()) {printErrorMessage(OPERATORS_OPERANDS_NUMBER_MISMATCH); return;}
-                else { tempInt = cal_stack.peek(true); cal_stack.pop();}
+                if (calStack.isEmpty()) {printErrorMessage(OPERATORS_OPERANDS_NUMBER_MISMATCH); return;}
+                else { tempInt = calStack.peek(true); calStack.pop();}
                 tempInt = -tempInt;
-                cal_stack.push(tempInt);
+                calStack.push(tempInt);
             }
 
             else if (tempToken == '&') {
@@ -564,13 +571,13 @@ void evaluatePostfixExpression(Queue *postfixQueue) {
             else{
                 int arg1, arg2, result = 0;
 
-                if (cal_stack.isEmpty()) {printErrorMessage(OPERATORS_OPERANDS_NUMBER_MISMATCH); return;}
-                else { arg2 = cal_stack.peek(true); cal_stack.pop(); }
-                if (cal_stack.isEmpty()) {printErrorMessage(OPERATORS_OPERANDS_NUMBER_MISMATCH); return;}
-                else { arg1 = cal_stack.peek(true); cal_stack.pop(); }
+                if (calStack.isEmpty()) {printErrorMessage(OPERATORS_OPERANDS_NUMBER_MISMATCH); return;}
+                else { arg2 = calStack.peek(true); calStack.pop(); }
+                if (calStack.isEmpty()) {printErrorMessage(OPERATORS_OPERANDS_NUMBER_MISMATCH); return;}
+                else { arg1 = calStack.peek(true); calStack.pop(); }
 
                 if ( operateCalculation(arg1, tempToken, arg2, &result) == PASS ){
-                    cal_stack.push(result);
+                    calStack.push(result);
                 }
                 else { printErrorMessage(DIVISION_BY_ZERO); return; }
             }
@@ -578,13 +585,13 @@ void evaluatePostfixExpression(Queue *postfixQueue) {
             postfixQueue->dequeue();
         }
         else {
-            cal_stack.push(atoi(postfixQueue->peek()));
+            calStack.push(atoi(postfixQueue->peek()));
             postfixQueue->dequeue();
         }
     }
 
-    int result = cal_stack.peek(true); cal_stack.pop();
-    if (!cal_stack.isEmpty()) printErrorMessage(OPERATORS_OPERANDS_NUMBER_MISMATCH);
+    int result = calStack.peek(true); calStack.pop();
+    if (!calStack.isEmpty()) printErrorMessage(OPERATORS_OPERANDS_NUMBER_MISMATCH);
     else printResult(result);
 }
 
